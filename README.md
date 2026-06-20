@@ -30,7 +30,7 @@
 > **🎉 Accepted by ECCV 2026**  
 > Official PyTorch implementation of **SFDNet**.
 
-📌 **Note:** This branch contains the **OBB** version code. If you are looking for the **HBB (Horizontal Bounding Box / Rotate)** version, please switch to the [`HBB`](../../tree/HBB) branch.
+📌 **Note:** This branch contains the **OBB** version code. If you are looking for the **HBB (Horizontal Bounding Box)** version, please switch to the [`HBB`](../../tree/HBB) branch.
 
 ## 📖 Abstract
 
