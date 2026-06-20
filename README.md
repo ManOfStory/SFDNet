@@ -41,16 +41,16 @@ Small Object Detection (SOD) is a fundamental yet challenging problem in compute
 ## 🎬 Overview
 
 <p align="center">
-  <img src="assets/motivation.png" alt="motivation" width="80%">
+  <img src="assets/motivation.png" alt="motivation" width="90%">
 </p>
 
 <p align="center">
-  <img src="assets/pipeline.png" alt="pipeline" width="80%">
+  <img src="assets/pipeline.png" alt="pipeline" width="100%">
 </p>
 
-<p align="center">
+<!-- <p align="center">
   <img src="assets/scan.png" alt="scan" width="80%">
-</p>
+</p> -->
 
 ---
 
