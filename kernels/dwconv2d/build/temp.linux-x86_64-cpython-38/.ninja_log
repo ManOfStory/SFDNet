@@ -1,0 +1,3 @@
+# ninja log v7
+0	16976	1781878217417178703	/home/yangzh/SFDNet_Final_Code_Rotate/kernels/dwconv2d/build/temp.linux-x86_64-cpython-38/dwconv2d.o	221b2185c115ac1c
+0	80009	1781878217417178703	/home/yangzh/SFDNet_Final_Code_Rotate/kernels/dwconv2d/build/temp.linux-x86_64-cpython-38/depthwise_fwd/launch.o	357bc72e395011e7

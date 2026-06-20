@@ -1,0 +1,4 @@
+# ninja log v7
+1	23482	1781878322973928835	/home/yangzh/SFDNet_Final_Code_Rotate/kernels/selective_scan/build/temp.linux-x86_64-cpython-38/csrc/selective_scan/cusoflexrh/selective_scan_oflex_rh.o	c7ba0ad258546256
+1	24669	1781878322973928835	/home/yangzh/SFDNet_Final_Code_Rotate/kernels/selective_scan/build/temp.linux-x86_64-cpython-38/csrc/selective_scan/cusoflexrh/selective_scan_core_fwd.o	e8386e0f0670c1ac
+0	79151	1781878322973928835	/home/yangzh/SFDNet_Final_Code_Rotate/kernels/selective_scan/build/temp.linux-x86_64-cpython-38/csrc/selective_scan/cusoflexrh/selective_scan_core_bwd.o	f79b5b88f79f92ed

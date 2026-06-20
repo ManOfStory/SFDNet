@@ -1,0 +1,7 @@
+# ninja log v5
+1	28063	1765442684	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba-Rotate/kernels/selective_scan/build/temp.linux-x86_64-3.8/csrc/selective_scan/cusoflexrh/selective_scan_core_fwd.o	454e7818d2ebc6e4
+1	29304	1765442685	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba-Rotate/kernels/selective_scan/build/temp.linux-x86_64-3.8/csrc/selective_scan/cusoflexrh/selective_scan_oflex_rh.o	baa15d95383cc119
+0	87917	1765442743	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba-Rotate/kernels/selective_scan/build/temp.linux-x86_64-3.8/csrc/selective_scan/cusoflexrh/selective_scan_core_bwd.o	4dfaf663f1744b3d
+1	29792	1781855688	/home/guoyang/Projects/NEWPAPER/SFDNet_Final_Code_Rotate/kernels/selective_scan/build/temp.linux-x86_64-3.8/csrc/selective_scan/cusoflexrh/selective_scan_core_fwd.o	a86f1ad37ae96114
+1	32216	1781855690	/home/guoyang/Projects/NEWPAPER/SFDNet_Final_Code_Rotate/kernels/selective_scan/build/temp.linux-x86_64-3.8/csrc/selective_scan/cusoflexrh/selective_scan_oflex_rh.o	b4396733a48c9feb
+0	95437	1781855753	/home/guoyang/Projects/NEWPAPER/SFDNet_Final_Code_Rotate/kernels/selective_scan/build/temp.linux-x86_64-3.8/csrc/selective_scan/cusoflexrh/selective_scan_core_bwd.o	a7881cc6eb013418
