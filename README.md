@@ -30,7 +30,7 @@
 > **🎉 Accepted by ECCV 2026**  
 > Official PyTorch implementation of **SFDNet**.
 
-📌 **Note:** This branch contains the **OBB** version code. If you are looking for the **HBB (Horizontal Bounding Box)** version, please switch to the [`HBB`](../../tree/HBB) branch.
+📌 **Note:** This branch contains the **OBB** version code. If you are looking for the **HBB (Horizontal Bounding Box / Rotate)** version, please switch to the [`HBB`](../../tree/HBB) branch.
 
 ## 📖 Abstract
 
@@ -41,16 +41,16 @@ Small Object Detection (SOD) is a fundamental yet challenging problem in compute
 ## 🎬 Overview
 
 <p align="center">
-  <img src="assets/motivation.png" alt="motivation" width="90%">
+  <img src="assets/motivation.png" alt="motivation" width="80%">
 </p>
 
 <p align="center">
-  <img src="assets/pipeline.png" alt="pipeline" width="100%">
+  <img src="assets/pipeline.png" alt="pipeline" width="80%">
 </p>
 
-<!-- <p align="center">
+<p align="center">
   <img src="assets/scan.png" alt="scan" width="80%">
-</p> -->
+</p>
 
 ---
 
@@ -178,7 +178,7 @@ outputs = self.model.train_step(data_batch, self.optimizer, **kwargs)
 ### 2. Dataset Preparation
 The SODA dataset is processed following the protocol of CFINet. We provide the pre-processed datasets below:
 
-- **SODA-A**: [Quark Drive](https://pan.quark.cn/s/460ce4ea0100?pwd=kmYy)
+- **SODA-A**: [Google Drive](link) | [Quark Drive](link)
 
 Please arrange your dataset directories as follows:
 ```
@@ -223,90 +223,24 @@ Please arrange your dataset directories as follows:
                 └── [image files]
 ```
 
-### 3. Download Pretrained Weights
-
-For the Mamba version of SFDNet, please download the required pretrained weights for the Spatial-Mamba Backbone from the links below. Available sizes are listed in the following table:
-
-<table>
-  <tr>
-    <!-- Base -->
-    <td align="center" valign="top" width="33%">
-      <table>
-        <thead>
-          <tr><th>Model Size</th><th>Download Link</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Base</strong></td>
-            <td><a href="https://drive.google.com/file/d/1k8dHp2QRCOqBSgAi36YkhZp_O8LqOPjM/view">Google Drive</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </td>
-    <!-- Small -->
-    <td align="center" valign="top" width="33%">
-      <table>
-        <thead>
-          <tr><th>Model Size</th><th>Download Link</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Small</strong></td>
-            <td><a href="https://drive.google.com/file/d/1Wb3sYoWLpgmWrmHMYKwdgDwGPZaqM28O/view">Google Drive</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </td>
-    <!-- Tiny -->
-    <td align="center" valign="top" width="33%">
-      <table>
-        <thead>
-          <tr><th>Model Size</th><th>Download Link</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Tiny</strong></td>
-            <td><a href="https://drive.google.com/file/d/19kXoqGSTuKKs4AHbdUSrdKZTwTWenLIW/view">Google Drive</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </td>
-  </tr>
-</table>
-
-### 4. Train & Evaluation
-
-#### Configuration Setup
-
-Before training, please ensure the following configurations are correctly set:
-
-1. **Dataset Paths**: Update the `data_root` variable to your local dataset path in the following files:
-   - `SFDNet/detection/configs/_base_/datasets/aitod-detection.py`
-   - `SFDNet/detection/configs/_base_/datasets/sodad-detection.py`
-   - `SFDNet/detection/mmrotate/configs/_base_/datasets/sodaa.py`
-
-2. **Pretrained Weights**: Update the `pretrained` argument in your specific model config file to point to the downloaded checkpoint path.
-
-3. **Model Architecture (Optional)**: To switch between different backbones, you need to modify the model backbone configuration and ensure the **FPN channel dimensions** are properly aligned.
+### 3. Train & Evaluation
 
 #### Training
 ```bash
-cd mmrotate
 # CNN version
-python tools/train.py configs/SFDNet/sodaa/SFDNet_CNN.py --work-dir SFDNet_CNN
+python tools/train.py mmrotate/configs/SFDNet/sodaa/SFDNet_CNN.py --work-dir SFDNet_CNN
 
 # Mamba version
-python tools/train.py configs/SFDNet/sodaa/SFDNet_Mamba.py --work-dir SFDNet_Mamba
+python tools/train.py mmrotate/configs/SFDNet/sodaa/SFDNet_Mamba.py --work-dir SFDNet_Mamba
 ```
 
 #### Evaluation
 ```bash
-cd mmrotate
 # CNN version
-python tools/test.py configs/SFDNet/aitoa/SFDNet_CNN.py SFDNet_CNN/epoch_xxx.pth
+python tools/test.py mmrotate/configs/SFDNet/aitoa/SFDNet_CNN.py SFDNet_CNN/epoch_xxx.pth
 
 # Mamba version
-python tools/test.py configs/SFDNet/sodaa/SFDNet_Mamba.py SFDNet_Mamba/epoch_xxx.pth
+python tools/test.py mmrotate/configs/SFDNet/sodaa/SFDNet_Mamba.py SFDNet_Mamba/epoch_xxx.pth
 ```
 
 ## 📬 Contact
