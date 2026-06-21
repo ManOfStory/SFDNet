@@ -168,7 +168,8 @@ class CPD_OrientedStandardRoIHead(RotatedStandardRoIHead):
                                                     gt_bboxes, gt_labels,
                                                     img_metas)
             losses.update(bbox_results['loss_bbox'])
-            losses.update(bbox_results['loss_distill'])
+            if "loss_distll" in bbox_results:
+                losses.update(bbox_results['loss_distill'])
         return losses
 
     def distill_and_update(self, x, gt_rois, gt_labels) -> None:
