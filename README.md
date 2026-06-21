@@ -223,7 +223,71 @@ Please arrange your dataset directories as follows:
                 └── [image files]
 ```
 
-### 3. Train & Evaluation
+### 3. Download Pretrained Weights
+
+For the Mamba version of SFDNet, please download the required pretrained weights for the Spatial-Mamba Backbone from the links below. Available sizes are listed in the following table:
+
+<table>
+  <tr>
+    <!-- Base -->
+    <td align="center" valign="top" width="33%">
+      <table>
+        <thead>
+          <tr><th>Model Size</th><th>Download Link</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Base</strong></td>
+            <td><a href="https://drive.google.com/file/d/1k8dHp2QRCOqBSgAi36YkhZp_O8LqOPjM/view">Google Drive</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+    <!-- Small -->
+    <td align="center" valign="top" width="33%">
+      <table>
+        <thead>
+          <tr><th>Model Size</th><th>Download Link</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Small</strong></td>
+            <td><a href="https://drive.google.com/file/d/1Wb3sYoWLpgmWrmHMYKwdgDwGPZaqM28O/view">Google Drive</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+    <!-- Tiny -->
+    <td align="center" valign="top" width="33%">
+      <table>
+        <thead>
+          <tr><th>Model Size</th><th>Download Link</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tiny</strong></td>
+            <td><a href="https://drive.google.com/file/d/19kXoqGSTuKKs4AHbdUSrdKZTwTWenLIW/view">Google Drive</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+
+### 4. Train & Evaluation
+
+#### Configuration Setup
+
+Before training, please ensure the following configurations are correctly set:
+
+1. **Dataset Paths**: Update the `data_root` variable to your local dataset path in the following files:
+   - `SFDNet/detection/configs/_base_/datasets/aitod-detection.py`
+   - `SFDNet/detection/configs/_base_/datasets/sodad-detection.py`
+   - `SFDNet/detection/mmrotate/configs/_base_/datasets/sodaa.py`
+
+2. **Pretrained Weights**: Update the `pretrained` argument in your specific model config file to point to the downloaded checkpoint path.
+
+3. **Model Architecture (Optional)**: To switch between different backbones, you need to modify the model backbone configuration and ensure the **FPN channel dimensions** are properly aligned.
 
 #### Training
 ```bash
@@ -242,6 +306,68 @@ python tools/test.py mmrotate/configs/SFDNet/aitoa/SFDNet_CNN.py SFDNet_CNN/epoc
 # Mamba version
 python tools/test.py mmrotate/configs/SFDNet/sodaa/SFDNet_Mamba.py SFDNet_Mamba/epoch_xxx.pth
 ```
+
+### 5. Model Zoo
+
+We provide the complete pretrained checkpoints for evaluating and reproducing the results of **SFDNet**. Please download the corresponding weights for both the CNN-based and Mamba-based (`SFDNet*`) architectures across different datasets (AI-TOD, SODA-D, and SODA-A) from the table below:
+<table>
+  <tr>
+    <td align="center" valign="top" width="33%">
+      <table>
+        <thead>
+          <tr><th colspan="2" style="text-align: center;">AI-TOD checkpoint</th></tr>
+          <tr><th>Model</th><th>Download Link</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SFDNet (CNN)</td>
+            <td><a href="YOUR_AI_TOD_CNN_URL_HERE">Google Drive</a></td>
+          </tr>
+          <tr>
+            <td>SFDNet* (Mamba)</td>
+            <td><a href="YOUR_AI_TOD_MAMBA_URL_HERE">Google Drive</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+    <td align="center" valign="top" width="33%">
+      <table>
+        <thead>
+          <tr><th colspan="2" style="text-align: center;">SODA-D checkpoint</th></tr>
+          <tr><th>Model</th><th>Download Link</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SFDNet (CNN)</td>
+            <td><a href="YOUR_SODA_D_CNN_URL_HERE">Google Drive</a></td>
+          </tr>
+          <tr>
+            <td>SFDNet* (Mamba)</td>
+            <td><a href="YOUR_SODA_D_MAMBA_URL_HERE">Google Drive</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+    <td align="center" valign="top" width="33%">
+      <table>
+        <thead>
+          <tr><th colspan="2" style="text-align: center;">SODA-A checkpoint</th></tr>
+          <tr><th>Model</th><th>Download Link</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SFDNet (CNN)</td>
+            <td><a href="YOUR_SODA_A_CNN_URL_HERE">Google Drive</a></td>
+          </tr>
+          <tr>
+            <td>SFDNet* (Mamba)</td>
+            <td><a href="YOUR_SODA_A_MAMBA_URL_HERE">Google Drive</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
 
 ## 📬 Contact
 * **Yang Guo:** [guoyang4409@gmail.com](mailto:guoyang4409@gmail.com)
