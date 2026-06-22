@@ -105,7 +105,8 @@ Small Object Detection (SOD) is a fundamental yet challenging problem in compute
 | HS-FPN† | AAAI2025 | 29.6 | 56.8 | 26.7 | 13.6 | 26.4 | 35.3 | 45.3 |
 | Unc-SOD | TIP2026 | 31.0 | 60.8 | 27.1 | 14.9 | 27.6 | 36.9 | 45.8 |
 | SFDNet | -- | 31.3 | 62.1 | 26.8 | 15.1 | 27.8 | 37.3 | 46.2 |
-| **SFDNet\*** | -- | **34.2** | **64.0** | **31.3** | **16.7** | **30.7** | **40.6** | **50.4** |
+| SFDNet\* | -- | 34.2 | 64.0 | 31.3 | 16.7 | 30.7 | 40.6 | 50.4 |
+| **SFDNet\*(newest)** | -- | **35.1** | **65.6** | **32.2** | **17.4** | **31.8** | **41.3** | **51.6** |
 
 ### Table 3. SODA-A Benchmark (Oriented Object Detection)
 * **Training Set:** SODA-A train set
