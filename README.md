@@ -292,10 +292,10 @@ Before training, please ensure the following configurations are correctly set:
 #### Training
 ```bash
 # CNN version
-python tools/train.py mmrotate/configs/SFDNet/sodaa/SFDNet_CNN.py --work-dir SFDNet_CNN
+python tools/train.py mmrotate/configs/SFDNet/sodaa/SFDNet_CNN.py --work-dir SFDNet_CNN [--amp]
 
 # Mamba version
-python tools/train.py mmrotate/configs/SFDNet/sodaa/SFDNet_Mamba.py --work-dir SFDNet_Mamba
+python tools/train.py mmrotate/configs/SFDNet/sodaa/SFDNet_Mamba.py --work-dir SFDNet_Mamba [--amp]
 ```
 
 #### Evaluation
