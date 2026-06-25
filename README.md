@@ -322,11 +322,11 @@ We provide the complete pretrained checkpoints for evaluating and reproducing th
         <tbody>
           <tr>
             <td>SFDNet (CNN)</td>
-            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/a03cbec766e34c9e97b605df4ec9c5e7">Google Drive</a></td>
+            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/a03cbec766e34c9e97b605df4ec9c5e7">Quark Drive</a></td>
           </tr>
           <tr>
             <td>SFDNet* (Mamba)</td>
-            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/e96b5ad63d754207b420faa342c64f63">Google Drive</a></td>
+            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/e96b5ad63d754207b420faa342c64f63">Quark Drive</a></td>
           </tr>
         </tbody>
       </table>
@@ -340,11 +340,11 @@ We provide the complete pretrained checkpoints for evaluating and reproducing th
         <tbody>
           <tr>
             <td>SFDNet (CNN)</td>
-            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/a03cbec766e34c9e97b605df4ec9c5e7">Google Drive</a></td>
+            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/a03cbec766e34c9e97b605df4ec9c5e7">Quark Drive</a></td>
           </tr>
           <tr>
             <td>SFDNet* (Mamba)</td>
-            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/e96b5ad63d754207b420faa342c64f63">Google Drive</a></td>
+            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/e96b5ad63d754207b420faa342c64f63">Quark Drive</a></td>
           </tr>
         </tbody>
       </table>
@@ -358,11 +358,11 @@ We provide the complete pretrained checkpoints for evaluating and reproducing th
         <tbody>
           <tr>
             <td>SFDNet (CNN)</td>
-            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/a03cbec766e34c9e97b605df4ec9c5e7">Google Drive</a></td>
+            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/a03cbec766e34c9e97b605df4ec9c5e7">Quark Drive</a></td>
           </tr>
           <tr>
             <td>SFDNet* (Mamba)</td>
-            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/e96b5ad63d754207b420faa342c64f63">Google Drive</a></td>
+            <td><a href="https://pan.quark.cn/s/79a08a2c3ed6?pwd=9Hp3#/list/share/e96b5ad63d754207b420faa342c64f63">Quark Drive</a></td>
           </tr>
         </tbody>
       </table>
