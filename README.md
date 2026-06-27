@@ -380,10 +380,5 @@ Special thanks to the authors of [CFINet](https://github.com/shaunyuan22/CFINet)
 ## ✏️ Citation
 If you find this project helpful for your research, please consider leaving a star ⭐️ and citing our paper:
 ```bibtex
-@inproceedings{guo2026sfdnet,
-  title={Adaptive Spectrum-Aware Feature Disentangled Network for Small Object Detection},
-  author={Guo, Yang and Yang, Zihan and Kou, Feifei and Hu, Yulan and Zhang, Ran and Yao, Siyuan},
-  booktitle={European Conference on Computer Vision (ECCV)},
-  year={2026}
-}
+coming soon.
 ```
