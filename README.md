@@ -2,41 +2,35 @@
 
 <h1>Adaptive Spectrum-Aware Feature Disentangled Network for Small Object Detection</h1>
 
-<div>
-    <strong>Yang Guo</strong><sup>1,2</sup> &emsp;
-    <strong>Zihan Yang</strong><sup>3</sup> &emsp;
-    <strong>Feifei Kou</strong><sup>2</sup> &emsp;
-    <strong>Yulan Hu</strong><sup>4</sup> &emsp;
-    <strong>Ran Zhang</strong><sup>5</sup> &emsp;
-    <strong>Siyuan Yao</strong><sup>1,*</sup>
+<p>
+<strong>Yang Guo</strong><sup>1,2</sup> &nbsp;
+<strong>Zihan Yang</strong><sup>3</sup> &nbsp;
+<strong>Feifei Kou</strong><sup>2</sup> &nbsp;
+<strong>Yulan Hu</strong><sup>4</sup> &nbsp;
+<strong>Ran Zhang</strong><sup>5</sup> &nbsp;
+<strong>Siyuan Yao</strong><sup>1,*</sup>
+</p>
+
+<p>
+<sup>1</sup> Shenzhen Campus of Sun Yat-sen University, China<br>
+<sup>2</sup> Beijing University of Posts and Telecommunications, Beijing, China<br>
+<sup>3</sup> Hangzhou International Innovation Institute, Beihang University, Hangzhou, China<br>
+<sup>4</sup> Renmin University of China<br>
+<sup>5</sup> China CITIC Bank<br>
+<sup>*</sup> Corresponding Author
+</p>
+
+<p>
+<a href="https://arxiv.org/abs/xxxx.xxxxx">
+<img src="https://img.shields.io/badge/📝_arXiv-Paper-b31b1b.svg">
+</a>
+</p>
+
 </div>
-
-<br>
-
-<div>
-    <sup>1</sup> Shenzhen Campus of Sun Yat-sen University, China<br>
-    <sup>2</sup> Beijing University of Posts and Telecommunications, Beijing, China<br>
-    <sup>3</sup> Hangzhou International Innovation Institute, Beihang University, Hangzhou, China<br>
-    <sup>4</sup> Renmin University of China<br>
-    <sup>5</sup> China CITIC Bank
-</div>
-
-<br>
-
-<div>
-    <sup>*</sup> <em>Corresponding Author</em>
-</div>
-
-</div>
-
-<br>
-<div>
-
-[![📝 arXiv paper](https://img.shields.io/badge/📝_arXiv-Paper-b31b1b.svg)](#)
 
 ---
 
-</div>
+## News
 
 > **🎉 Accepted by ECCV 2026**  
 > Official PyTorch implementation of **SFDNet**.
