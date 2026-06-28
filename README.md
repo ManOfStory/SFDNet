@@ -302,10 +302,10 @@ python tools/train.py mmrotate/configs/SFDNet/sodaa/SFDNet_Mamba.py --work-dir S
 #### Evaluation
 ```bash
 # CNN version
-python tools/test.py mmrotate/configs/SFDNet/aitoa/SFDNet_CNN.py SFDNet_CNN/epoch_xxx.pth
+python tools/test.py mmrotate/configs/SFDNet/aitoa/SFDNet_CNN.py SFDNet_CNN/epoch_xxx.pth --eval mAP
 
 # Mamba version
-python tools/test.py mmrotate/configs/SFDNet/sodaa/SFDNet_Mamba.py SFDNet_Mamba/epoch_xxx.pth
+python tools/test.py mmrotate/configs/SFDNet/sodaa/SFDNet_Mamba.py SFDNet_Mamba/epoch_xxx.pth --eval mAP
 ```
 
 ### 5. Model Zoo
