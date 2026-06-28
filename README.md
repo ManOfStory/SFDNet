@@ -3,23 +3,31 @@
 <h1>Adaptive Spectrum-Aware Feature Disentangled Network for Small Object Detection</h1>
 
 <div>
-    <strong>Yang Guo</strong><sup>1</sup> &emsp;
-    <strong>Zihan Yang</strong><sup>2</sup> &emsp;
-    <strong>Feifei Kou</strong> &emsp;
-    <strong>Yulan Hu</strong> &emsp;
-    <strong>Ran Zhang</strong> &emsp;
-    <strong>Siyuan Yao</strong><sup>*</sup>
+    <strong>Yang Guo</strong><sup>1,2</sup> &emsp;
+    <strong>Zihan Yang</strong><sup>3</sup> &emsp;
+    <strong>Feifei Kou</strong><sup>2</sup> &emsp;
+    <strong>Yulan Hu</strong><sup>4</sup> &emsp;
+    <strong>Ran Zhang</strong><sup>5</sup> &emsp;
+    <strong>Siyuan Yao</strong><sup>1,*</sup>
 </div>
+
 <br>
+
 <div>
-    <sup>1</sup> Beijing University of Posts and Telecommunications (BUPT)<br>
-    <sup>2</sup> Beijing University of Aeronautics and Astronautics (BUAA)
+    <sup>1</sup> Shenzhen Campus of Sun Yat-sen University, China<br>
+    <sup>2</sup> Beijing University of Posts and Telecommunications, Beijing, China<br>
+    <sup>3</sup> Hangzhou International Innovation Institute, Beihang University, Hangzhou, China<br>
+    <sup>4</sup> Renmin University of China<br>
+    <sup>5</sup> China CITIC Bank
 </div>
+
 <br>
+
 <div>
-    <sup>*</sup> <em>Corresponding author</em>
+    <sup>*</sup> <em>Corresponding Author</em>
 </div>
-<br>
+
+</div>
 
 [![📝 arXiv paper](https://img.shields.io/badge/📝_arXiv-Paper-b31b1b.svg)](#)
 
