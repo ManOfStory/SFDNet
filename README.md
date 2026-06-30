@@ -21,7 +21,7 @@
 </p>
 
 <p>
-<a href="https://arxiv.org/abs/xxxx.xxxxx">
+<a href="https://arxiv.org/abs/2606.29029">
 <img src="https://img.shields.io/badge/📝_arXiv-Paper-b31b1b.svg">
 </a>
 </p>
@@ -385,5 +385,12 @@ Special thanks to the authors of [CFINet](https://github.com/shaunyuan22/CFINet)
 ## ✏️ Citation
 If you find this project helpful for your research, please consider leaving a star ⭐️ and citing our paper:
 ```bibtex
-coming soon.
+@misc{guo2026adaptivespectrumawarefeaturedisentangled,
+      title={Adaptive Spectrum-Aware Feature Disentangled Network for Small Object Detection}, 
+      author={Yang Guo and Zihan Yang and Feifei Kou and Yulan Hu and Ran Zhang and Siyuan Yao},
+      year={2026},
+      eprint={2606.29029},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+}
 ```
