@@ -1,0 +1,10 @@
+# ninja log v7
+4	23821	1764407726113480583	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/selective_scan/build/temp.linux-x86_64-cpython-310/csrc/selective_scan/cusoflexrh/selective_scan_core_fwd.o	1c4ea89f53b76b25
+0	45272	1764407726109480583	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/selective_scan/build/temp.linux-x86_64-cpython-310/csrc/selective_scan/cusoflexrh/selective_scan_core_bwd.o	cfb3cf58dd8b38fc
+5	73949	1764407726114480583	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/selective_scan/build/temp.linux-x86_64-cpython-310/csrc/selective_scan/cusoflexrh/selective_scan_oflex_rh.o	85c3db5ed89ec70c
+100	20121	1764482785571048548	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/selective_scan/build/temp.linux-x86_64-cpython-310/csrc/selective_scan/cusoflexrh/selective_scan_oflex_rh.o	1c93695d04b006d1
+100	23792	1764482789177048671	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/selective_scan/build/temp.linux-x86_64-cpython-310/csrc/selective_scan/cusoflexrh/selective_scan_core_fwd.o	25391894c0a504f0
+99	66254	1764482831649050124	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/selective_scan/build/temp.linux-x86_64-cpython-310/csrc/selective_scan/cusoflexrh/selective_scan_core_bwd.o	171c8854a9e796f8
+1	23149	1764488695	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/selective_scan/build/temp.linux-x86_64-cpython-310/csrc/selective_scan/cusoflexrh/selective_scan_oflex_rh.o	413d343a42e0269b
+1	27244	1764488699	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/selective_scan/build/temp.linux-x86_64-cpython-310/csrc/selective_scan/cusoflexrh/selective_scan_core_fwd.o	44a95e678b8f240d
+0	83238	1764488755	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/selective_scan/build/temp.linux-x86_64-cpython-310/csrc/selective_scan/cusoflexrh/selective_scan_core_bwd.o	1fb2f94cfe80f0e8

@@ -1,0 +1,7 @@
+# ninja log v7
+2	17296	1764407963529488706	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/dwconv2d/build/temp.linux-x86_64-cpython-310/dwconv2d.o	fe20106a2c820150
+20	105110	1764409169474529964	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/dwconv2d/build/temp.linux-x86_64-cpython-310/depthwise_fwd/launch.o	8725109875b4a72a
+51	15470	1764482884809051943	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/dwconv2d/build/temp.linux-x86_64-cpython-310/dwconv2d.o	4917588e2a9097bd
+50	107012	1764482976322055074	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/dwconv2d/build/temp.linux-x86_64-cpython-310/depthwise_fwd/launch.o	3f0bcc23fa95cff7
+0	21098	1764488846	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/dwconv2d/build/temp.linux-x86_64-cpython-310/dwconv2d.o	1ac4d0f39e03f04d
+0	119963	1764488944	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/dwconv2d/build/temp.linux-x86_64-cpython-310/depthwise_fwd/launch.o	8a8db28834c49991

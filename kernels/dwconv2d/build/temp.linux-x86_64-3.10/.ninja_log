@@ -1,0 +1,3 @@
+# ninja log v7
+1	22199	1764488204411576078	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/dwconv2d/build/temp.linux-x86_64-3.10/dwconv2d.o	5cb9682eabc99123
+1	123810	1764488204411576078	/home/guoyang/Projects/NEWPAPER/Spatial-Mamba/kernels/dwconv2d/build/temp.linux-x86_64-3.10/depthwise_fwd/launch.o	8a44456400e10556
