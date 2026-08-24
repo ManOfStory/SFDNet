@@ -184,7 +184,7 @@ outputs = self.model.train_step(data_batch, self.optimizer, **kwargs)
 ### 2. Dataset Preparation
 The SODA dataset is processed following the protocol of CFINet. We provide the pre-processed datasets below:
 
-- **SODA-A**: [Quark Drive](https://pan.quark.cn/s/2b62b25c34ef?pwd=hBv1)
+- **SODA-A**: [Quark Drive](https://pan.quark.cn/s/8322929ef271?pwd=xSc3)
 
 Please arrange your dataset directories as follows:
 ```
