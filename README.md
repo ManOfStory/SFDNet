@@ -276,7 +276,9 @@ Before training, please ensure the following configurations are correctly set:
 
 2. **Pretrained Weights**: Update the `pretrained` argument in your specific model config file to point to the downloaded checkpoint path.
 
-3. **Model Architecture (Optional)**: To switch between different backbones, you need to modify the model backbone configuration and ensure the **FPN channel dimensions** are properly aligned.
+3. **Model Architecture (Optional)**: To switch between backbone variants, update the corresponding backbone configuration and verify that the FPN channel dimensions are consistent with the selected backbone.
+   - [Tiny Backbone Configuration](https://github.com/EdwardChasel/Spatial-Mamba/blob/main/detection/configs/spatialmamba/mask_rcnn_spatialmamba_fpn_coco_tiny.py)
+   - [Small Backbone Configuration](https://github.com/EdwardChasel/Spatial-Mamba/blob/main/detection/configs/spatialmamba/mask_rcnn_spatialmamba_fpn_coco_small.py)
 
 #### Training
 ```bash
