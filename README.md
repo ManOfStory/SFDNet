@@ -173,8 +173,8 @@ cd kernels/cocoapi-aitod/aitodpycocotools && python setup.py install && cd ../..
 ### 2. Dataset Preparation
 The SODA dataset is processed following the protocol of CFINet. We provide the pre-processed datasets below:
 
-- **AI-TOD**: [Quark Drive](https://pan.quark.cn/s/c3eaabcea18b?pwd=QRNM)
-- **SODA-D**: [Quark Drive](https://pan.quark.cn/s/a5c5bd961de9?pwd=Rjbz)
+- **AI-TOD**: [Quark Drive](https://pan.quark.cn/s/555ecad7497e?pwd=H682)
+- **SODA-D**: [Quark Drive](https://pan.quark.cn/s/18ea7397429c?pwd=7tvJ)
 
 Please arrange your dataset directories as follows:
 ```
