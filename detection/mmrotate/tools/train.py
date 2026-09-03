@@ -3,8 +3,15 @@ import argparse
 import copy
 import os
 import os.path as osp
+import sys
 import time
 import warnings
+from pathlib import Path
+
+
+DETECTION_DIR = Path(__file__).resolve().parents[2]
+if str(DETECTION_DIR) not in sys.path:
+    sys.path.insert(0, str(DETECTION_DIR))
 
 import mmcv
 import torch
@@ -14,6 +21,8 @@ from mmcv.runner import get_dist_info, init_dist
 from mmcv.utils import get_git_hash
 from mmdet import __version__
 from mmdet.apis import init_random_seed, set_random_seed
+
+import model  # noqa: F401,E402 - registers SFDNet model components
 
 from mmrotate.apis import train_detector
 from mmrotate.datasets import build_dataset
