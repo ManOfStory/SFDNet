@@ -307,10 +307,10 @@ confidence, and `bbox_xyxy` coordinates.
 Run the default Mamba configuration from the repository root:
 
 ```bash
-conda activate SFDNet_Final
+conda activate SFDNet
 python detection/tools/infer_image.py \
-    /path/to/aitod_image.png \
-    /path/to/AITOD_MAMBA_epoch_36.pth \
+    /path/to/image.png \
+    /path/to/checkpoint.pth \
     --out-file inference_outputs/hbb_result.jpg \
     --json-out inference_outputs/hbb_result.json
 ```
@@ -318,10 +318,13 @@ python detection/tools/infer_image.py \
 For a CNN checkpoint, pass its matching configuration explicitly:
 
 ```bash
+conda activate SFDNet
 python detection/tools/infer_image.py \
-    /path/to/aitod_image.png \
-    /path/to/SFDNet_CNN_epoch_xxx.pth \
-    --config detection/configs/SFDNet/aitod/SFDNet_CNN.py
+    /path/to/image.png \
+    /path/to/checkpoint.pth \
+    --config detection/configs/SFDNet/aitod/SFDNet_CNN.py \
+    --out-file inference_outputs/hbb_result.jpg \
+    --json-out inference_outputs/hbb_result.json
 ```
 
 `--score-thr` defaults to `0.3` and controls the model's final score filter,
