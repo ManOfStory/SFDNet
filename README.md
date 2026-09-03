@@ -327,8 +327,8 @@ Run the default Mamba configuration from the repository root:
 ```bash
 conda activate SFDNet_R
 python detection/mmrotate/tools/infer_image.py \
-    /path/to/sodaa_image.jpg \
-    /path/to/SODAA_MAMBA_epoch_12.pth \
+    /path/to/image.jpg \
+    /path/to/checkpoint.pth \
     --out-file inference_outputs/obb_result.jpg \
     --json-out inference_outputs/obb_result.json
 ```
@@ -337,9 +337,11 @@ For a CNN checkpoint, pass its matching configuration explicitly:
 
 ```bash
 python detection/mmrotate/tools/infer_image.py \
-    /path/to/sodaa_image.jpg \
-    /path/to/SFDNet_CNN_epoch_xxx.pth \
-    --config detection/mmrotate/configs/SFDNet/sodaa/SFDNet_CNN.py
+    /path/to/image.jpg \
+    /path/to/checkpoint.pth \
+    --config detection/mmrotate/configs/SFDNet/sodaa/SFDNet_CNN.py \
+    --out-file inference_outputs/obb_result.jpg \
+    --json-out inference_outputs/obb_result.json
 ```
 
 `--score-thr` defaults to `0.3` and controls the model's final score filter,
