@@ -333,7 +333,35 @@ final detection NMS IoU threshold is taken from the configuration (currently
 `0.5`). The RPN NMS settings remain unchanged. Use `--device cpu` when a GPU
 is not available.
 
-### 6. Model Zoo
+### 6. ONNX Export
+
+Install the ONNX package in the HBB environment, then export from the repository
+root with a representative image:
+
+```bash
+conda activate SFDNet
+pip install onnx
+python detection/tools/export_onnx.py \
+    /path/to/image.png \
+    /path/to/checkpoint.pth \
+    --output-file inference_outputs/sfdnet_hbb.onnx
+```
+
+The image is processed by the configured test pipeline and fixes the exported
+input shape. The graph outputs `boxes` (`xyxy`), `scores`, and `labels`; the
+score and NMS thresholds come from the config unless `--score-thr` or
+`--nms-thr` is provided. The script runs `onnx.checker` after export and checks
+that the required custom nodes are present.
+
+SFDNet uses CUDA selective-scan and complex FFT operations that cannot be
+represented by the PyTorch ONNX exporter as standard operators. The exported
+graph therefore contains `sfdnet::SelectiveScan`, `sfdnet::FFT2Shift`, and
+`sfdnet::IFFT2Shift`. Implement and register these operators in the target
+runtime before using the model with ONNX Runtime or TensorRT. The exported file
+is a validated deployment graph, but it is not directly executable by stock
+ONNX Runtime.
+
+### 7. Model Zoo
 
 We provide the complete pretrained checkpoints for evaluating and reproducing the results of **SFDNet**. Please download the corresponding weights for both the CNN-based and Mamba-based (`SFDNet*`) architectures across different datasets (AI-TOD, SODA-D, and SODA-A) from the table below:
 <table>
