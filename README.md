@@ -298,8 +298,39 @@ python tools/test.py configs/SFDNet/aitod/SFDNet_CNN.py SFDNet_CNN/epoch_xxx.pth
 python tools/test.py configs/SFDNet/aitod/SFDNet_Mamba.py SFDNet_Mamba/epoch_xxx.pth
 ```
 
+### 5. Single-Image Inference
 
-### 5. Model Zoo
+Use `detection/tools/infer_image.py` to run HBB inference on one image. The
+script writes a visualization and a JSON file containing the detected class,
+confidence, and `bbox_xyxy` coordinates.
+
+Run the default Mamba configuration from the repository root:
+
+```bash
+conda activate SFDNet_Final
+python detection/tools/infer_image.py \
+    /path/to/aitod_image.png \
+    /path/to/AITOD_MAMBA_epoch_36.pth \
+    --out-file inference_outputs/hbb_result.jpg \
+    --json-out inference_outputs/hbb_result.json
+```
+
+For a CNN checkpoint, pass its matching configuration explicitly:
+
+```bash
+python detection/tools/infer_image.py \
+    /path/to/aitod_image.png \
+    /path/to/SFDNet_CNN_epoch_xxx.pth \
+    --config detection/configs/SFDNet/aitod/SFDNet_CNN.py
+```
+
+`--score-thr` defaults to `0.3` and controls the model's final score filter,
+visualization, and JSON output. `--nms-thr` is optional; when omitted, the
+final detection NMS IoU threshold is taken from the configuration (currently
+`0.5`). The RPN NMS settings remain unchanged. Use `--device cpu` when a GPU
+is not available.
+
+### 6. Model Zoo
 
 We provide the complete pretrained checkpoints for evaluating and reproducing the results of **SFDNet**. Please download the corresponding weights for both the CNN-based and Mamba-based (`SFDNet*`) architectures across different datasets (AI-TOD, SODA-D, and SODA-A) from the table below:
 <table>
