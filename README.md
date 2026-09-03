@@ -315,7 +315,40 @@ python tools/test.py mmrotate/configs/SFDNet/aitoa/SFDNet_CNN.py SFDNet_CNN/epoc
 python tools/test.py mmrotate/configs/SFDNet/sodaa/SFDNet_Mamba.py SFDNet_Mamba/epoch_xxx.pth --eval mAP
 ```
 
-### 5. Model Zoo
+### 5. Single-Image Inference
+
+Use `detection/mmrotate/tools/infer_image.py` to run OBB inference on one
+image. The script writes a visualization and a JSON file containing the
+detected class, confidence, and `obb_cxcywha` values (`cx`, `cy`, `w`, `h`, and
+the model's configured angle representation).
+
+Run the default Mamba configuration from the repository root:
+
+```bash
+conda activate SFDNet_R
+python detection/mmrotate/tools/infer_image.py \
+    /path/to/sodaa_image.jpg \
+    /path/to/SODAA_MAMBA_epoch_12.pth \
+    --out-file inference_outputs/obb_result.jpg \
+    --json-out inference_outputs/obb_result.json
+```
+
+For a CNN checkpoint, pass its matching configuration explicitly:
+
+```bash
+python detection/mmrotate/tools/infer_image.py \
+    /path/to/sodaa_image.jpg \
+    /path/to/SFDNet_CNN_epoch_xxx.pth \
+    --config detection/mmrotate/configs/SFDNet/sodaa/SFDNet_CNN.py
+```
+
+`--score-thr` defaults to `0.3` and controls the model's final score filter,
+visualization, and JSON output. `--nms-thr` is optional; when omitted, the
+final detection NMS IoU threshold is taken from the configuration (currently
+`0.5`). The RPN NMS settings remain unchanged. Use `--device cpu` when a GPU
+is not available.
+
+### 6. Model Zoo
 
 We provide the complete pretrained checkpoints for evaluating and reproducing the results of **SFDNet**. Please download the corresponding weights for both the CNN-based and Mamba-based (`SFDNet*`) architectures across different datasets (AI-TOD, SODA-D, and SODA-A) from the table below:
 <table>
