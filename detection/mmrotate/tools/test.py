@@ -3,8 +3,16 @@ import argparse
 import os
 import json
 import os.path as osp
+import sys
 import time
 import warnings
+from pathlib import Path
+
+
+DETECTION_DIR = Path(__file__).resolve().parents[2]
+if str(DETECTION_DIR) not in sys.path:
+    sys.path.insert(0, str(DETECTION_DIR))
+
 import numpy as np
 import mmcv
 import torch
@@ -15,6 +23,8 @@ from mmcv.runner import (get_dist_info, init_dist, load_checkpoint,
                          wrap_fp16_model)
 from mmdet.apis import multi_gpu_test#, single_gpu_test
 from mmdet.datasets import build_dataloader, replace_ImageToTensor
+
+import model  # noqa: F401,E402 - registers SFDNet model components
 
 from mmrotate.datasets import build_dataset
 from mmrotate.models import build_detector

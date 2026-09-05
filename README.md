@@ -315,7 +315,101 @@ python tools/test.py mmrotate/configs/SFDNet/aitoa/SFDNet_CNN.py SFDNet_CNN/epoc
 python tools/test.py mmrotate/configs/SFDNet/sodaa/SFDNet_Mamba.py SFDNet_Mamba/epoch_xxx.pth --eval mAP
 ```
 
-### 5. Model Zoo
+### 5. Single-Image Inference
+
+Use `detection/mmrotate/tools/infer_image.py` to run OBB inference on one
+image. The script writes a visualization and a JSON file containing the
+detected class, confidence, and `obb_cxcywha` values (`cx`, `cy`, `w`, `h`, and
+the model's configured angle representation).
+
+Run the default Mamba configuration from the repository root:
+
+```bash
+conda activate SFDNet_R
+python detection/mmrotate/tools/infer_image.py \
+    /path/to/sodaa_image.jpg \
+    /path/to/SODAA_MAMBA_epoch_12.pth \
+    --out-file inference_outputs/obb_result.jpg \
+    --json-out inference_outputs/obb_result.json
+```
+
+For a CNN checkpoint, pass its matching configuration explicitly:
+
+```bash
+conda activate SFDNet_R
+python detection/mmrotate/tools/infer_image.py \
+    /path/to/sodaa_image.jpg \
+    /path/to/SFDNet_CNN_epoch_xxx.pth \
+    --config detection/mmrotate/configs/SFDNet/sodaa/SFDNet_CNN.py \
+    --out-file inference_outputs/obb_result.jpg \
+    --json-out inference_outputs/obb_result.json
+```
+
+`--score-thr` defaults to `0.3` and controls the model's final score filter,
+visualization, and JSON output. `--nms-thr` is optional; when omitted, the
+final detection NMS IoU threshold is taken from the configuration (currently
+`0.5`). The RPN NMS settings remain unchanged. Use `--device cpu` when a GPU
+is not available.
+
+### 6. ONNX Export
+
+Install the ONNX package in the OBB environment, then export from the repository
+root with a representative image:
+
+```bash
+conda activate SFDNet_R
+pip install onnx onnxruntime onnxruntime-extensions
+python detection/mmrotate/tools/export_onnx.py \
+    /path/to/sodaa_image.jpg \
+    /path/to/checkpoint.pth \
+    --output-file inference_outputs/sfdnet_obb.onnx
+```
+
+The image is processed by the configured test pipeline and fixes the exported
+input shape. The graph outputs `boxes` (`cxcywha`), `scores`, and `labels`; the
+score and rotated-NMS thresholds come from the config unless `--score-thr` or
+`--nms-thr` is provided. The script runs `onnx.checker` after export and checks
+that the required custom nodes are present.
+
+SFDNet uses CUDA selective-scan, complex FFT, and rotated-detection operations
+that cannot all be represented as standard ONNX operators. The exported graph
+therefore contains custom `sfdnet` nodes for selective scan, FFT/IFFT, rotated
+RoIAlign, and rotated NMS.
+
+Use the provided reference runtime to execute those operators with the same
+project CUDA and MMCV kernels. It creates an ONNX Runtime copy whose custom
+nodes use the `ai.onnx.contrib` domain and saves `boxes`, `scores`, and `labels`
+to an NPZ:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python detection/mmrotate/tools/onnx_runtime.py \
+    inference_outputs/sfdnet_obb.onnx \
+    --runtime-model inference_outputs/sfdnet_obb_ort.onnx \
+    --image /path/to/sodaa_image.jpg \
+    --output-npy inference_outputs/sfdnet_obb_result.npz
+```
+
+The reference runtime was checked with `SODAA_MAMBA_epoch_12.pth` and the same
+preprocessed image at `score_thr=0.5`, `nms_thr=0.4`. PyTorch and ONNX Runtime
+both returned 20 detections with identical labels and ordering. The maximum
+`cxcywha` parameter error was 0.03002 and the maximum score error was 0.00117.
+
+This runtime is intended for correctness validation: standard ONNX nodes run on
+the CPU provider while the custom callbacks use PyTorch CUDA/MMCV kernels. A
+native ONNX Runtime CUDA or TensorRT plugin is still required for production
+throughput. The export has a fixed input shape, so a full-dataset ONNX AP
+comparison requires exporting the shapes used by the evaluation pipeline; the
+single-image parity figures above must not be interpreted as a full-test-set AP
+measurement.
+
+For a checkpoint sanity check, the official PyTorch test command was run on the
+SODA-A test set with `SODAA_MAMBA_epoch_12.pth`. It measured AP/AP50/AP75 of
+`39.1/74.7/36.5`, compared with the README reference `39.2/75.0/36.6`.
+These small differences are checkpoint/evaluation reproducibility variation, not
+an ONNX conversion measurement; the ONNX reference runtime was validated on the
+single-image parity test above.
+
+### 7. Model Zoo
 
 We provide the complete pretrained checkpoints for evaluating and reproducing the results of **SFDNet**. Please download the corresponding weights for both the CNN-based and Mamba-based (`SFDNet*`) architectures across different datasets (AI-TOD, SODA-D, and SODA-A) from the table below:
 <table>
