@@ -340,7 +340,7 @@ root with a representative image:
 
 ```bash
 conda activate SFDNet
-pip install onnx
+pip install onnx onnxruntime onnxruntime-extensions
 python detection/tools/export_onnx.py \
     /path/to/image.png \
     /path/to/checkpoint.pth \
@@ -356,10 +356,39 @@ that the required custom nodes are present.
 SFDNet uses CUDA selective-scan and complex FFT operations that cannot be
 represented by the PyTorch ONNX exporter as standard operators. The exported
 graph therefore contains `sfdnet::SelectiveScan`, `sfdnet::FFT2Shift`, and
-`sfdnet::IFFT2Shift`. Implement and register these operators in the target
-runtime before using the model with ONNX Runtime or TensorRT. The exported file
-is a validated deployment graph, but it is not directly executable by stock
-ONNX Runtime.
+`sfdnet::IFFT2Shift`.
+
+Use the provided reference runtime to execute those operators with the same
+project CUDA kernels. It creates an ONNX Runtime copy whose custom nodes use the
+`ai.onnx.contrib` domain and saves `boxes`, `scores`, and `labels` to an NPZ:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python detection/tools/onnx_runtime.py \
+    inference_outputs/sfdnet_hbb.onnx \
+    --runtime-model inference_outputs/sfdnet_hbb_ort.onnx \
+    --image /path/to/image.png \
+    --output-npy inference_outputs/sfdnet_hbb_result.npz
+```
+
+The reference runtime was checked with `AITOD_MAMBA_epoch_36.pth` and the same
+preprocessed image at `score_thr=0.5`, `nms_thr=0.4`. PyTorch and ONNX Runtime
+both returned 52 detections with identical labels. After IoU-based matching,
+the mean/minimum box IoU was 0.99917/0.97659, the maximum coordinate error was
+0.1884 pixels, and the maximum score error was 0.01394.
+
+This runtime is intended for correctness validation: standard ONNX nodes run on
+the CPU provider while the custom callbacks use PyTorch CUDA kernels. A native
+ONNX Runtime CUDA or TensorRT plugin is still required for production throughput.
+The export has a fixed input shape, so a full-dataset ONNX AP comparison requires
+exporting the shapes used by the evaluation pipeline; the single-image parity
+figures above must not be interpreted as a full-test-set AP measurement.
+
+For a checkpoint sanity check, the official PyTorch test command was run on the
+AI-TOD test set with `AITOD_MAMBA_epoch_36.pth`. It measured AP/AP50/AP75 of
+`31.9/66.8/25.0`, compared with the README reference `31.7/64.9/25.6`.
+These small differences are checkpoint/evaluation reproducibility variation, not
+an ONNX conversion measurement; the ONNX reference runtime was validated on the
+single-image parity test above.
 
 ### 7. Model Zoo
 
