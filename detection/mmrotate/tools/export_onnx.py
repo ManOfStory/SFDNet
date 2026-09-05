@@ -2,9 +2,8 @@
 """Export an SFDNet OBB checkpoint to a fixed-shape ONNX graph.
 
 The Spatial-Mamba, ASD, rotated RoIAlign, and rotated NMS operations are
-represented as explicit ``sfdnet`` custom-domain nodes. A deployment runtime
-must provide implementations for those nodes; stock ONNX Runtime cannot execute
-them.
+represented as explicit ``sfdnet`` custom-domain nodes. Use ``onnx_runtime.py``
+for the project's reference implementations of those nodes.
 """
 
 import argparse
@@ -414,8 +413,9 @@ def main():
         print(f"ONNX checker: PASS ({node_count} nodes; {summary})")
     print(f"ONNX: {output_file}")
     print(
-        "Runtime note: implement the sfdnet custom-domain operators before "
-        "running this graph in ONNX Runtime or TensorRT.")
+        "Runtime note: use detection/mmrotate/tools/onnx_runtime.py for "
+        "reference execution; native deployment still requires CUDA/TensorRT "
+        "plugins.")
 
 
 if __name__ == "__main__":
